@@ -11,8 +11,8 @@ func chest(cet, get []int) []int {
 				get[i]++
 				counter++
 			} else if cet[i] < get[i] {
-				get[i]++
-				counter++
+				get[i]--
+				counter--
 			} else {
 				resultat = append(resultat, counter)
 				counter = 0
@@ -29,6 +29,12 @@ func main() {
 	for i := 0; i < len(cet); i++ {
 		fmt.Scan(&input)
 		get = append(get, input)
+
 	}
-	fmt.Println(chest(cet, get))
+	svar := chest(cet, get)
+	for x := range svar {
+		fmt.Print(" ")
+		fmt.Print(svar[x])
+	}
+
 }
